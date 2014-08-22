@@ -8,3 +8,11 @@ Rake::TestTask.new(:test) do |test|
 end
 
 task :default => :test
+
+task :console do
+  require 'irb'
+  require 'irb/completion'
+  require 'nmusic_search_server'
+  ARGV.clear
+  IRB.start
+end
